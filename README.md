@@ -639,7 +639,15 @@ GPT Researcher, implementing agent production-ready.
 
 ![image](https://github.com/user-attachments/assets/0550713b-0291-4e91-836c-3f3cdf7305db)
 
-GPT Research Report Output: https://github.com/junfanz1/LangGraph-Reflection-Agent/blob/main/gpt-researcher.ipynb
+GPT Research Report: https://github.com/junfanz1/LangGraph-Reflection-Agent/blob/main/gpt-researcher.ipynb
+
+Input: 
+```python
+query = "Why DeepSeek's MoE and GRPO is a successful architecture in LLM research and application?"
+report_type = "research_report"
+```
+
+Output:
 
 ---
 

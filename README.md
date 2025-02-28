@@ -37,8 +37,8 @@ The LangGraph project implements a "Reflexion Agent" designed to iteratively ref
   - [14. How it Works](#14-how-it-works)
     - [Class/Function Breakdown](#classfunction-breakdown)
   - [15. Crucial Function: `tool_node` Integration and `run_queries()`](#15-crucial-function-tool_node-integration-and-run_queries)
-  - [16. Future Improvements](#16-future-improvements)
-  - [17. Additional Considerations](#17-additional-considerations)
+  - [16. Additional Considerations](#16-additional-considerations)
+  - [17. Future Improvements](#17-future-improvements)
   - [Acknowledgements](#acknowledgements)
 
 <!-- TOC end -->
@@ -601,8 +601,22 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
     * By wrapping the function in a tool, we allow the LLM to call the tavily search api, when the LLM deems it necessary.
     * The Pydantic models ensure that the data is structured and validated, maintaining consistency and reliability.
 
-<!-- TOC --><a name="16-future-improvements"></a>
-## 16. Future Improvements
+<!-- TOC --><a name="16-additional-considerations"></a>
+## 16. Additional Considerations
+
+* **API Key Security:** Ensure that API keys are stored securely and not exposed in version control.
+* **Cost Management:** Monitor API usage and implement cost control measures.
+* **Prompt Engineering:** Experiment with different prompt templates to optimize the agent's performance.
+* **Scalability:** Consider the scalability of the application when deploying it in a production environment.
+* **Testing:** Implement unit and integration tests to ensure the agent's reliability.
+* **Documentation:** Maintain clear and up-to-date documentation for the project.
+* **Virtual Environments:** Always use virtual environments to manage project dependencies.
+* **Code Quality:** Adhere to coding standards and best practices.
+* **Version Control:** Use version control (e.g., Git) to track changes and collaborate with others.
+* **Security:** Implement security best practices to protect the application and user data.
+
+<!-- TOC --><a name="17-future-improvements"></a>
+## 17. Future Improvements
 
 * **Improved Error Handling:** Implement robust error handling for API requests and LLM output parsing.
 * **Dynamic Tool Selection:** Allow the agent to dynamically choose tools based on the query and context.
@@ -629,7 +643,6 @@ GPT Research Report Output: https://github.com/junfanz1/LangGraph-Reflection-Age
 
 ---
 
-Report:
 # Why DeepSeek's MoE and GRPO is a Successful Architecture in LLM Research and Application
 
 ## Introduction
@@ -737,19 +750,6 @@ Research Images:
 
 ---
 
-<!-- TOC --><a name="17-additional-considerations"></a>
-## 17. Additional Considerations
-
-* **API Key Security:** Ensure that API keys are stored securely and not exposed in version control.
-* **Cost Management:** Monitor API usage and implement cost control measures.
-* **Prompt Engineering:** Experiment with different prompt templates to optimize the agent's performance.
-* **Scalability:** Consider the scalability of the application when deploying it in a production environment.
-* **Testing:** Implement unit and integration tests to ensure the agent's reliability.
-* **Documentation:** Maintain clear and up-to-date documentation for the project.
-* **Virtual Environments:** Always use virtual environments to manage project dependencies.
-* **Code Quality:** Adhere to coding standards and best practices.
-* **Version Control:** Use version control (e.g., Git) to track changes and collaborate with others.
-* **Security:** Implement security best practices to protect the application and user data.
 
 <!-- TOC --><a name="acknowledgements"></a>
 ## Acknowledgements

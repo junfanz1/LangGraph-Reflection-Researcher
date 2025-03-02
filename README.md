@@ -35,10 +35,11 @@ The LangGraph project implements a "Reflexion Agent" designed to iteratively ref
    * [Class/Function Breakdown](#classfunction-breakdown)
 - [15. Crucial Function: `tool_node` Integration and `run_queries()`](#15-crucial-function-tool_node-integration-and-run_queries)
 - [16. Additional Considerations](#16-additional-considerations)
-- [17. Future of Researcher Agent](#17-future-of-researcher-agent)
-   * [Project Improvements](#project-improvements)
+- [17. Summary](#17-summary)
    * [LangGraph Researcher Agent](#langgraph-researcher-agent)
    * [Reason for LangGraph in Multi-Agent Architecture](#reason-for-langgraph-in-multi-agent-architecture)
+   * [Future Improvements](#future-improvements)
+   * [Example of GPT Researcher Report](#example-of-gpt-researcher-report)
 - [Acknowledgements](#acknowledgements)
 
 <!-- TOC end -->
@@ -319,16 +320,6 @@ references:
 
 * **LangChain:** Used for building LLM applications, including prompt templating, output parsing, and tool usage.
 * **LangGraph:** Used to create stateful, multi-actor applications by defining a graph of nodes and edges.
-
-LangGraph Components
-- Nodes (Python functions)
-- Edges (connect nodes)
-- Conditional Edges (make dynamic decisions to go to node A or B)
-
-State Management: dictionary to track the graph’s execution result, chat history, etc.
-
-Reflection Agents: prompt to improve quality and success rate of agents/AI systems.
-
 * **OpenAI GPT-4 Turbo Preview:** The LLM used for generating and refining answers.
 * **Tavily Search API:** Used for web search to gather additional information.
 * **Pydantic:** Used for data validation and schema definition.
@@ -615,20 +606,19 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
 * **Version Control:** Use version control (e.g., Git) to track changes and collaborate with others.
 * **Security:** Implement security best practices to protect the application and user data.
 
-<!-- TOC --><a name="17-future-of-researcher-agent"></a>
-## 17. Future of Researcher Agent
+<!-- TOC --><a name="17-summary"></a>
+## 17. Summary
 
-<!-- TOC --><a name="project-improvements"></a>
-### Project Improvements
 
-* **Improved Error Handling:** Implement robust error handling for API requests and LLM output parsing.
-* **Dynamic Tool Selection:** Allow the agent to dynamically choose tools based on the query and context.
-* **Knowledge Graph Integration:** Integrate knowledge graphs for more structured information retrieval.
-* **User Feedback Loops:** Implement mechanisms for users to provide feedback and refine the agent's behavior.
-* **Multi-Modal Input/Output:** Extend the agent to handle images, audio, and other data types.
-* **Advanced Critique Mechanisms:** Implement more sophisticated critique and reflection techniques.
-* **Caching:** Implement caching for API responses to reduce costs and improve performance.
-* **Logging and Monitoring:** Add logging and monitoring to track the agent's performance and identify potential issues.
+LangGraph Components
+- Nodes (Python functions)
+- Edges (connect nodes)
+- Conditional Edges (make dynamic decisions to go to node A or B)
+
+State Management: dictionary to track the graph’s execution result, chat history, etc.
+
+Reflection Agents: prompt to improve quality and success rate of agents/AI systems.
+
 
 <!-- TOC --><a name="langgraph-researcher-agent"></a>
 ### LangGraph Researcher Agent
@@ -646,6 +636,19 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
 - Allow both web and local data indexing, with LangChain easy integration can embed anything
 - Human-in-the-loop, let user decide how much feedback autonomy to interact with, especially useful when finding two knowledge sources that conflict or contradict each other. When this happens, AI needs human assistance.
 
+<!-- TOC --><a name="future-improvements"></a>
+### Future Improvements
+* **Improved Error Handling:** Implement robust error handling for API requests and LLM output parsing.
+* **Dynamic Tool Selection:** Allow the agent to dynamically choose tools based on the query and context.
+* **Knowledge Graph Integration:** Integrate knowledge graphs for more structured information retrieval.
+* **User Feedback Loops:** Implement mechanisms for users to provide feedback and refine the agent's behavior.
+* **Multi-Modal Input/Output:** Extend the agent to handle images, audio, and other data types.
+* **Advanced Critique Mechanisms:** Implement more sophisticated critique and reflection techniques.
+* **Caching:** Implement caching for API responses to reduce costs and improve performance.
+* **Logging and Monitoring:** Add logging and monitoring to track the agent's performance and identify potential issues.
+
+<!-- TOC --><a name="example-of-gpt-researcher-report"></a>
+### Example of GPT Researcher Report
 
 <img src="https://github.com/user-attachments/assets/fbda8fd2-5cc5-40ad-bbb1-13295453098f" width="50%" height="50%">
 

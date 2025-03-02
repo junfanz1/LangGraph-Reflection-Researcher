@@ -2,9 +2,6 @@
 <!-- TOC --><a name="reflexion-agent-iterative-llm-research-and-refinement"></a>
 # LangGraph Reflection Research Agent: Iterative LLM Research and Refinement
 
-The LangGraph project implements a "Reflexion Agent" designed to iteratively refine answers to user queries using a Large Language Model (LLM) and web search. It simulates a research process where an initial answer is generated, critiqued, and revised based on information gathered from web searches, all managed by a LangGraph workflow. The project leverages LangChain, OpenAI's GPT-4, and the Tavily Search API to automate research and improve the quality of generated content. It highlights the use of LangGraph for complex, multi-step LLM applications and addresses challenges related to dependency management, LLM output parsing, and tool integration.
-
-
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=junfanz1/LangGraph-Reflexion-Agent&type=Date)](https://star-history.com/#junfanz1/LangGraph-Reflexion-Agent&Date)
@@ -14,7 +11,7 @@ The LangGraph project implements a "Reflexion Agent" designed to iteratively ref
 
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
-- [1. Purpose of the Project](#1-purpose-of-the-project)
+- [1. Purpose of Project](#1-purpose-of-project)
 - [2. Input and Output](#2-input-and-output)
 - [3. LLM Technology Stack](#3-llm-technology-stack)
 - [4. Challenges and Difficulties](#4-challenges-and-difficulties)
@@ -39,10 +36,12 @@ The LangGraph project implements a "Reflexion Agent" designed to iteratively ref
 - [Acknowledgements](#acknowledgements)
 <!-- TOC end -->
 
-<!-- TOC --><a name="1-purpose-of-the-project"></a>
-## 1. Purpose of the Project
+<!-- TOC --><a name="1-purpose-of-project"></a>
+## 1. Purpose of Project
 
-This project implements a "Reflexion Agent" that iteratively refines answers to user queries using a Large Language Model (LLM) and web search. It simulates a research process where an initial answer is generated, critiqued, and then revised based on additional information gathered from web searches. The agent uses LangGraph to manage the state and flow of the process.
+The LangGraph project implements a "Reflexion Research Agent" designed to iteratively refine answers to user queries using a Large Language Model (LLM) and web search. It simulates a research process where an initial answer is generated, critiqued, and revised based on information gathered from web searches, all managed by a LangGraph workflow. The project leverages LangChain, OpenAI's GPT-4, and the Tavily Search API to automate research and improve the quality of generated content. It highlights the use of LangGraph for complex, multi-step LLM applications and addresses challenges related to dependency management, LLM output parsing, and tool integration.
+
+Abstract: Project implements a "Reflexion Research Agent" that iteratively refines answers to user queries using a Large Language Model (LLM) and web search. It simulates a research process where an initial answer is generated, critiqued, and then revised based on additional information gathered from web searches. The agent uses LangGraph to manage the state and flow of the process.
 
 <!-- TOC --><a name="2-input-and-output"></a>
 ## 2. Input and Output

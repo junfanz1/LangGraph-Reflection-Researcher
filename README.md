@@ -1,6 +1,6 @@
 
 <!-- TOC --><a name="reflexion-agent-iterative-llm-research-and-refinement"></a>
-# LangGraph Reflection Agent: Iterative LLM Research and Refinement
+# LangGraph Reflection Research Agent: Iterative LLM Research and Refinement
 
 The LangGraph project implements a "Reflexion Agent" designed to iteratively refine answers to user queries using a Large Language Model (LLM) and web search. It simulates a research process where an initial answer is generated, critiqued, and revised based on information gathered from web searches, all managed by a LangGraph workflow. The project leverages LangChain, OpenAI's GPT-4, and the Tavily Search API to automate research and improve the quality of generated content. It highlights the use of LangGraph for complex, multi-step LLM applications and addresses challenges related to dependency management, LLM output parsing, and tool integration.
 
@@ -14,32 +14,32 @@ The LangGraph project implements a "Reflexion Agent" designed to iteratively ref
 
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
-- [LangGraph Reflection Agent: Iterative LLM Research and Refinement](#langgraph-reflection-agent-iterative-llm-research-and-refinement)
-  - [Star History](#star-history)
-  - [Contents](#contents)
-  - [1. Purpose of the Project](#1-purpose-of-the-project)
-  - [2. Input and Output](#2-input-and-output)
-  - [3. LLM Technology Stack](#3-llm-technology-stack)
-  - [4. Challenges and Difficulties](#4-challenges-and-difficulties)
-  - [5. Future Business Impact and Further Improvements](#5-future-business-impact-and-further-improvements)
-  - [6. Target Audience and Benefits](#6-target-audience-and-benefits)
-  - [7. Advantages and Disadvantages](#7-advantages-and-disadvantages)
-  - [8. Tradeoffs](#8-tradeoffs)
-  - [9. Highlight and Summary](#9-highlight-and-summary)
-  - [10. Debugging Notes](#debugging-notes)
-  - [11. Prerequisites](#11-prerequisites)
-  - [12. Setup](#12-setup)
-  - [13. Code Explanation](#13-code-explanation)
-    - [`main.py`](#mainpy)
-    - [`chains.py`](#chainspy)
-    - [`tool_executor.py`](#tool_executorpy)
-    - [`schemas.py`](#schemaspy)
-  - [14. How it Works](#14-how-it-works)
-    - [Class/Function Breakdown](#classfunction-breakdown)
-  - [15. Crucial Function: `tool_node` Integration and `run_queries()`](#15-crucial-function-tool_node-integration-and-run_queries)
-  - [16. Additional Considerations](#16-additional-considerations)
-  - [17. Future Improvements](#17-future-improvements)
-  - [Acknowledgements](#acknowledgements)
+- [1. Purpose of the Project](#1-purpose-of-the-project)
+- [2. Input and Output](#2-input-and-output)
+- [3. LLM Technology Stack](#3-llm-technology-stack)
+- [4. Challenges and Difficulties](#4-challenges-and-difficulties)
+- [5. Future Business Impact and Further Improvements](#5-future-business-impact-and-further-improvements)
+- [6. Target Audience and Benefits](#6-target-audience-and-benefits)
+- [7. Advantages and Disadvantages](#7-advantages-and-disadvantages)
+- [8. Tradeoffs](#8-tradeoffs)
+- [9. Highlight and Summary](#9-highlight-and-summary)
+- [10. Debugging Notes](#10-debugging-notes)
+- [11. Prerequisites](#11-prerequisites)
+- [12. Setup](#12-setup)
+- [13. Code Explanation](#13-code-explanation)
+   * [`main.py`](#mainpy)
+   * [`chains.py`](#chainspy)
+   * [`tool_executor.py`](#tool_executorpy)
+   * [`schemas.py`](#schemaspy)
+- [14. How it Works](#14-how-it-works)
+   * [Class/Function Breakdown](#classfunction-breakdown)
+- [15. Crucial Function: `tool_node` Integration and `run_queries()`](#15-crucial-function-tool_node-integration-and-run_queries)
+- [16. Additional Considerations](#16-additional-considerations)
+- [17. Future of Researcher Agent](#17-future-of-researcher-agent)
+   * [Project Improvements](#project-improvements)
+   * [LangGraph Researcher Agent](#langgraph-researcher-agent)
+   * [Reason for LangGraph in Multi-Agent Architecture](#reason-for-langgraph-in-multi-agent-architecture)
+- [Acknowledgements](#acknowledgements)
 
 <!-- TOC end -->
 
@@ -404,7 +404,7 @@ Reflection Agents: prompt to improve quality and success rate of agents/AI syste
 This project demonstrates the power of LangGraph and LLMs for building iterative research agents. It showcases how to combine LLM-generated content with external tools and automated feedback loops to produce high-quality, refined answers.
 
 
-<!-- TOC --><a name="10-debuggingnotes"></a>
+<!-- TOC --><a name="10-debugging-notes"></a>
 ## 10. Debugging Notes
 
 https://github.com/langchain-ai/langgraph/issues/3637#issuecomment-2690150631
@@ -528,8 +528,8 @@ https://github.com/langchain-ai/langgraph/releases
     * Add more detailed validation rules.
     * Define schemas for other data types.
 
-<!-- TOC --><a name="14-how-it-works"></a>
 
+<!-- TOC --><a name="14-how-it-works"></a>
 ## 14. How it Works
 
 1.  The user provides a query: inputs a natural language question or request into the system (e.g., "Write about DeepSeek MoE and GRPO, list its impact and applications to future AI research."). This query is the starting point for the agent's research and refinement process.
@@ -573,7 +573,7 @@ https://github.com/langchain-ai/langgraph/releases
 * **`schemas.py`:**
     * `Reflection`, `AnswerQuestion`, `ReviseAnswer`: Defines Pydantic data schemas.
 
-<!-- TOC --><a name="15-crucial-function-execute_tools"></a>
+<!-- TOC --><a name="15-crucial-function-tool_node-integration-and-run_queries"></a>
 ## 15. Crucial Function: `tool_node` Integration and `run_queries()`
 
 The `tool_node` integration and `run_queries()` function in `tool_executor.py` are crucial for integrating external information into the LLM's responses. Here's a detailed elaboration:
@@ -615,8 +615,11 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
 * **Version Control:** Use version control (e.g., Git) to track changes and collaborate with others.
 * **Security:** Implement security best practices to protect the application and user data.
 
-<!-- TOC --><a name="17-future-improvements"></a>
-## 17. Future Improvements
+<!-- TOC --><a name="17-future-of-researcher-agent"></a>
+## 17. Future of Researcher Agent
+
+<!-- TOC --><a name="project-improvements"></a>
+### Project Improvements
 
 * **Improved Error Handling:** Implement robust error handling for API requests and LLM output parsing.
 * **Dynamic Tool Selection:** Allow the agent to dynamically choose tools based on the query and context.
@@ -627,13 +630,22 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
 * **Caching:** Implement caching for API responses to reduce costs and improve performance.
 * **Logging and Monitoring:** Add logging and monitoring to track the agent's performance and identify potential issues.
 
-Multi-Agent Architecture
-- LangGraph (Flow Engineering techniques addresses the tradeoff between agent freedom and our control) is more flexible in production than CrewAI (doesn’t have as much control of the flow)
-
-GPT Researcher, implementing agent production-ready.
+<!-- TOC --><a name="langgraph-researcher-agent"></a>
+### LangGraph Researcher Agent
+- Implementing agent production-ready. There’re nodes and edges, but no cycles. We can integrate GPT Researcher (as a node under LangGraph graph) within Multi-Agent Architecture. https://github.com/junfanz1/gpt-researcher/tree/master/multi_agents
 - https://github.com/assafelovic/gpt-researcher
-- Technology agent is talor-made for technological subjects, and is dynamically created/chosen
-- There’re nodes and edges, but no cycles. We can integrate GPT Researcher (as a node under LangGraph graph) within Multi-Agent Architecture. https://github.com/junfanz1/gpt-researcher/tree/master/multi_agents 
+- Every agent in a multi-agent system can be a researcher, as part of workflow. e.g., `Technology` agent is talor-made for technological subjects, and is dynamically created/chosen
+- Research automation needs to make a decision for a few deeper levels and iterate again again again until the optimal answer. Key difference here is not only width (in parallel then aggregation) but also depth
+
+<!-- TOC --><a name="reason-for-langgraph-in-multi-agent-architecture"></a>
+### Reason for LangGraph in Multi-Agent Architecture
+- LangGraph (Flow Engineering techniques addresses the tradeoff between agent freedom and our control) is more flexible in production than CrewAI (doesn’t have as much control of the flow)
+- Breaks down the problem into specific actions, like microservices, (1) with specialized tasks, we can control quality of nodes, (2) can scale up the application as it grows
+- Customizability, creative framework
+- Contextual compression is the best method for retrieving in RAG workflow
+- Allow both web and local data indexing, with LangChain easy integration can embed anything
+- Human-in-the-loop, let user decide how much feedback autonomy to interact with, especially useful when finding two knowledge sources that conflict or contradict each other. When this happens, AI needs human assistance.
+
 
 <img src="https://github.com/user-attachments/assets/fbda8fd2-5cc5-40ad-bbb1-13295453098f" width="50%" height="50%">
 
@@ -648,6 +660,17 @@ report_type = "research_report"
 ```
 
 Output:
+
+---
+
+
+
+<!-- TOC --><a name="acknowledgements"></a>
+## Acknowledgements
+
+[Eden Marco: LangGraph-Develop LLM powered AI agents with LangGraph](https://www.udemy.com/course/langgraph)
+
+
 
 ---
 

@@ -34,12 +34,11 @@ The LangGraph project implements a "Reflexion Agent" designed to iteratively ref
 - [14. How it Works](#14-how-it-works)
    * [Class/Function Breakdown](#classfunction-breakdown)
 - [15. Crucial Function: `tool_node` Integration and `run_queries()`](#15-crucial-function-tool_node-integration-and-run_queries)
-- [16. Additional Considerations](#16-additional-considerations)
+- [16. Future Improvements](#16-future-improvements)
 - [17. Summary](#17-summary)
    * [LangGraph Researcher Agent](#langgraph-researcher-agent)
    * [Reason for LangGraph in Multi-Agent Architecture](#reason-for-langgraph-in-multi-agent-architecture)
-   * [Future Improvements](#future-improvements)
-   * [Example of GPT Researcher Report](#example-of-gpt-researcher-report)
+   * [GPT Researcher Example](#gpt-researcher-example)
 - [Acknowledgements](#acknowledgements)
 
 <!-- TOC end -->
@@ -592,9 +591,9 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
     * By wrapping the function in a tool, we allow the LLM to call the tavily search api, when the LLM deems it necessary.
     * The Pydantic models ensure that the data is structured and validated, maintaining consistency and reliability.
 
-<!-- TOC --><a name="16-additional-considerations"></a>
-## 16. Additional Considerations
+## 16. Future Improvements
 
+Considerations
 * **API Key Security:** Ensure that API keys are stored securely and not exposed in version control.
 * **Cost Management:** Monitor API usage and implement cost control measures.
 * **Prompt Engineering:** Experiment with different prompt templates to optimize the agent's performance.
@@ -605,6 +604,17 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
 * **Code Quality:** Adhere to coding standards and best practices.
 * **Version Control:** Use version control (e.g., Git) to track changes and collaborate with others.
 * **Security:** Implement security best practices to protect the application and user data.
+
+Future Improvements
+* **Improved Error Handling:** Implement robust error handling for API requests and LLM output parsing.
+* **Dynamic Tool Selection:** Allow the agent to dynamically choose tools based on the query and context.
+* **Knowledge Graph Integration:** Integrate knowledge graphs for more structured information retrieval.
+* **User Feedback Loops:** Implement mechanisms for users to provide feedback and refine the agent's behavior.
+* **Multi-Modal Input/Output:** Extend the agent to handle images, audio, and other data types.
+* **Advanced Critique Mechanisms:** Implement more sophisticated critique and reflection techniques.
+* **Caching:** Implement caching for API responses to reduce costs and improve performance.
+* **Logging and Monitoring:** Add logging and monitoring to track the agent's performance and identify potential issues.
+
 
 <!-- TOC --><a name="17-summary"></a>
 ## 17. Summary
@@ -636,19 +646,8 @@ Reflection Agents: prompt to improve quality and success rate of agents/AI syste
 - Allow both web and local data indexing, with LangChain easy integration can embed anything
 - Human-in-the-loop, let user decide how much feedback autonomy to interact with, especially useful when finding two knowledge sources that conflict or contradict each other. When this happens, AI needs human assistance.
 
-<!-- TOC --><a name="future-improvements"></a>
-### Future Improvements
-* **Improved Error Handling:** Implement robust error handling for API requests and LLM output parsing.
-* **Dynamic Tool Selection:** Allow the agent to dynamically choose tools based on the query and context.
-* **Knowledge Graph Integration:** Integrate knowledge graphs for more structured information retrieval.
-* **User Feedback Loops:** Implement mechanisms for users to provide feedback and refine the agent's behavior.
-* **Multi-Modal Input/Output:** Extend the agent to handle images, audio, and other data types.
-* **Advanced Critique Mechanisms:** Implement more sophisticated critique and reflection techniques.
-* **Caching:** Implement caching for API responses to reduce costs and improve performance.
-* **Logging and Monitoring:** Add logging and monitoring to track the agent's performance and identify potential issues.
-
-<!-- TOC --><a name="example-of-gpt-researcher-report"></a>
-### Example of GPT Researcher Report
+<!-- TOC --><a name="gpt-researcher-example"></a>
+### GPT Researcher Example
 
 <img src="https://github.com/user-attachments/assets/fbda8fd2-5cc5-40ad-bbb1-13295453098f" width="50%" height="50%">
 

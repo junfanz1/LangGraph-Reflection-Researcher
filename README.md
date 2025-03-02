@@ -664,16 +664,6 @@ Output:
 ---
 
 
-
-<!-- TOC --><a name="acknowledgements"></a>
-## Acknowledgements
-
-[Eden Marco: LangGraph-Develop LLM powered AI agents with LangGraph](https://www.udemy.com/course/langgraph)
-
-
-
----
-
 # Why DeepSeek's MoE and GRPO is a Successful Architecture in LLM Research and Application
 
 ## Introduction
@@ -780,7 +770,6 @@ Research Images:
 ['https://adasci.org/wp-content/uploads/2023/01/happy-indian-university-student-walking-with-mobil-2021-08-27-16-35-34-utc-scaled.jpg', 'https://adasci.org/wp-content/uploads/2023/01/indian-man-in-office-portrait-2022-11-06-23-14-38-utc-scaled.jpg', 'https://adasci.org/wp-content/uploads/2024/02/handsome-man-smiling-wearing-a-suit-in-a-conversat-2023-11-27-05-15-51-utc-scaled.jpg', 'https://adasci.org/wp-content/uploads/2022/12/ADASCI-15-1-1.png', 'https://cdn.analyticsvidhya.com/wp-content/uploads/2025/02/image-7-2.webp', 'https://cdn.analyticsvidhya.com/wp-content/uploads/2025/02/DPO_OP4.webp', 'https://cdn.analyticsvidhya.com/wp-content/uploads/2025/02/GRPO_Eq4.webp', 'https://opdeepseek.com/wp-content/uploads/2025/02/Add-a-subheading-9.webp', 'https://ghost.oxen.ai/content/images/2025/02/2.png', 'https://ghost.oxen.ai/content/images/2025/02/5.png']
 
 ---
-
 
 <!-- TOC --><a name="acknowledgements"></a>
 ## Acknowledgements

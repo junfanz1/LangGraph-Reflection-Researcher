@@ -20,27 +20,23 @@ The LangGraph project implements a "Reflexion Agent" designed to iteratively ref
 - [4. Challenges and Difficulties](#4-challenges-and-difficulties)
 - [5. Future Business Impact and Further Improvements](#5-future-business-impact-and-further-improvements)
 - [6. Target Audience and Benefits](#6-target-audience-and-benefits)
-- [7. Advantages and Disadvantages](#7-advantages-and-disadvantages)
-- [8. Tradeoffs](#8-tradeoffs)
-- [9. Highlight and Summary](#9-highlight-and-summary)
-- [10. Debugging Notes](#10-debugging-notes)
-- [11. Prerequisites](#11-prerequisites)
-- [12. Setup](#12-setup)
-- [13. Code Explanation](#13-code-explanation)
+- [7. Advantages, Disadvantages and Tradeoffs](#7-advantages-disadvantages-and-tradeoffs)
+- [8. Setup](#8-setup)
+- [9. Code Explanation](#9-code-explanation)
    * [`main.py`](#mainpy)
    * [`chains.py`](#chainspy)
    * [`tool_executor.py`](#tool_executorpy)
    * [`schemas.py`](#schemaspy)
-- [14. How it Works](#14-how-it-works)
+- [10. How it Works](#10-how-it-works)
    * [Class/Function Breakdown](#classfunction-breakdown)
-- [15. Crucial Function: `tool_node` Integration and `run_queries()`](#15-crucial-function-tool_node-integration-and-run_queries)
-- [16. Future Improvements](#16-future-improvements)
-- [17. Summary](#17-summary)
+- [11. Crucial Functions](#11-crucial-functions)
+- [12. Future Improvements](#12-future-improvements)
+- [13. Summary](#13-summary)
    * [LangGraph Researcher Agent](#langgraph-researcher-agent)
    * [Reason for LangGraph in Multi-Agent Architecture](#reason-for-langgraph-in-multi-agent-architecture)
    * [GPT Researcher Example](#gpt-researcher-example)
+- [14. Debugging Notes](#14-debugging-notes)
 - [Acknowledgements](#acknowledgements)
-
 <!-- TOC end -->
 
 <!-- TOC --><a name="1-purpose-of-the-project"></a>
@@ -363,8 +359,8 @@ references:
 * Improved accuracy and reliability of information.
 * Automated refinement of answers based on feedback and new information.
 
-<!-- TOC --><a name="7-advantages-and-disadvantages"></a>
-## 7. Advantages and Disadvantages
+<!-- TOC --><a name="7-advantages-disadvantages-and-tradeoffs"></a>
+## 7. Advantages, Disadvantages and Tradeoffs
 
 **Advantages:**
 
@@ -380,48 +376,24 @@ references:
 * Complexity of managing LangGraph state and nodes.
 * Requires careful prompt engineering for optimal performance.
 
-<!-- TOC --><a name="8-tradeoffs"></a>
-## 8. Tradeoffs
+**Tradeoffs:**
 
 * **Speed vs. Accuracy:** Iterative refinement takes time but improves accuracy.
 * **Cost vs. Performance:** Using powerful LLMs and search APIs can be costly.
 * **Complexity vs. Flexibility:** LangGraph provides flexibility but adds complexity.
 * **Automation vs. Control:** Automating research reduces manual effort but may require less manual oversight.
 
-<!-- TOC --><a name="9-highlight-and-summary"></a>
-## 9. Highlight and Summary
 
-This project demonstrates the power of LangGraph and LLMs for building iterative research agents. It showcases how to combine LLM-generated content with external tools and automated feedback loops to produce high-quality, refined answers.
+<!-- TOC --><a name="8-setup"></a>
+## 8. Setup
 
-
-<!-- TOC --><a name="10-debugging-notes"></a>
-## 10. Debugging Notes
-
-https://github.com/langchain-ai/langgraph/issues/3637#issuecomment-2690150631
-
-https://github.com/langchain-ai/langgraph/releases
-
-<img src="https://github.com/user-attachments/assets/a5c8ff4e-e893-4122-a889-54fc99812c06f" width="50%" height="50%">
-
-```python
-############
-# tool_executor.py Update 
-# ToolInvocation, ToolExecutor have been deprecated after LangGraph 3.0, it is recommended to replace them with ToolNode
-############
-```
-
-
-<!-- TOC --><a name="11-prerequisites"></a>
-## 11. Prerequisites
+Prerequisites
 
 * Python 3.10+
 * Poetry (recommended) or pip
 * OpenAI API key
 * Tavily Search API key
 * LangGraph 0.3.1
-
-<!-- TOC --><a name="12-setup"></a>
-## 12. Setup
 
 1.  **Clone the repository:**
     ```bash
@@ -452,8 +424,8 @@ https://github.com/langchain-ai/langgraph/releases
     python main.py
     ```
 
-<!-- TOC --><a name="13-code-explanation"></a>
-## 13. Code Explanation
+<!-- TOC --><a name="9-code-explanation"></a>
+## 9. Code Explanation
 
 <!-- TOC --><a name="mainpy"></a>
 ### `main.py`
@@ -519,8 +491,8 @@ https://github.com/langchain-ai/langgraph/releases
     * Define schemas for other data types.
 
 
-<!-- TOC --><a name="14-how-it-works"></a>
-## 14. How it Works
+<!-- TOC --><a name="10-how-it-works"></a>
+## 10. How it Works
 
 1.  The user provides a query: inputs a natural language question or request into the system (e.g., "Write about DeepSeek MoE and GRPO, list its impact and applications to future AI research."). This query is the starting point for the agent's research and refinement process.
 2.  Initialization and Graph Execution: The `main.py` script initializes the LangGraph, which begins at the "first_responder" node.
@@ -563,8 +535,8 @@ https://github.com/langchain-ai/langgraph/releases
 * **`schemas.py`:**
     * `Reflection`, `AnswerQuestion`, `ReviseAnswer`: Defines Pydantic data schemas.
 
-<!-- TOC --><a name="15-crucial-function-tool_node-integration-and-run_queries"></a>
-## 15. Crucial Function: `tool_node` Integration and `run_queries()`
+<!-- TOC --><a name="11-crucial-functions"></a>
+## 11. Crucial Functions
 
 The `tool_node` integration and `run_queries()` function in `tool_executor.py` are crucial for integrating external information into the LLM's responses. Here's a detailed elaboration:
 
@@ -591,7 +563,8 @@ The `tool_node` integration and `run_queries()` function in `tool_executor.py` a
     * By wrapping the function in a tool, we allow the LLM to call the tavily search api, when the LLM deems it necessary.
     * The Pydantic models ensure that the data is structured and validated, maintaining consistency and reliability.
 
-## 16. Future Improvements
+<!-- TOC --><a name="12-future-improvements"></a>
+## 12. Future Improvements
 
 Considerations
 * **API Key Security:** Ensure that API keys are stored securely and not exposed in version control.
@@ -616,9 +589,10 @@ Future Improvements
 * **Logging and Monitoring:** Add logging and monitoring to track the agent's performance and identify potential issues.
 
 
-<!-- TOC --><a name="17-summary"></a>
-## 17. Summary
+<!-- TOC --><a name="13-summary"></a>
+## 13. Summary
 
+This project demonstrates the power of LangGraph and LLMs for building iterative research agents. It showcases how to combine LLM-generated content with external tools and automated feedback loops to produce high-quality, refined answers.
 
 LangGraph Components
 - Nodes (Python functions)
@@ -772,6 +746,23 @@ Research Images:
 ['https://adasci.org/wp-content/uploads/2023/01/happy-indian-university-student-walking-with-mobil-2021-08-27-16-35-34-utc-scaled.jpg', 'https://adasci.org/wp-content/uploads/2023/01/indian-man-in-office-portrait-2022-11-06-23-14-38-utc-scaled.jpg', 'https://adasci.org/wp-content/uploads/2024/02/handsome-man-smiling-wearing-a-suit-in-a-conversat-2023-11-27-05-15-51-utc-scaled.jpg', 'https://adasci.org/wp-content/uploads/2022/12/ADASCI-15-1-1.png', 'https://cdn.analyticsvidhya.com/wp-content/uploads/2025/02/image-7-2.webp', 'https://cdn.analyticsvidhya.com/wp-content/uploads/2025/02/DPO_OP4.webp', 'https://cdn.analyticsvidhya.com/wp-content/uploads/2025/02/GRPO_Eq4.webp', 'https://opdeepseek.com/wp-content/uploads/2025/02/Add-a-subheading-9.webp', 'https://ghost.oxen.ai/content/images/2025/02/2.png', 'https://ghost.oxen.ai/content/images/2025/02/5.png']
 
 ---
+<!-- TOC --><a name="14-debugging-notes"></a>
+## 14. Debugging Notes
+
+https://github.com/langchain-ai/langgraph/issues/3637#issuecomment-2690150631
+
+https://github.com/langchain-ai/langgraph/releases
+
+<img src="https://github.com/user-attachments/assets/a5c8ff4e-e893-4122-a889-54fc99812c06f" width="50%" height="50%">
+
+```python
+############
+# tool_executor.py Update 
+# ToolInvocation, ToolExecutor have been deprecated after LangGraph 3.0, it is recommended to replace them with ToolNode
+############
+```
+
+
 
 <!-- TOC --><a name="acknowledgements"></a>
 ## Acknowledgements

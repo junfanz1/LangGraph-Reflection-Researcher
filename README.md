@@ -605,8 +605,8 @@ Reflection Agents: prompt to improve quality and success rate of agents/AI syste
 
 <!-- TOC --><a name="langgraph-researcher-agent"></a>
 ### LangGraph Researcher Agent
-- Implementing agent production-ready. There’re nodes and edges, but no cycles. We can integrate GPT Researcher (as a node under LangGraph graph) within Multi-Agent Architecture. https://github.com/junfanz1/gpt-researcher/tree/master/multi_agents
-- https://github.com/assafelovic/gpt-researcher
+https://github.com/assafelovic/gpt-researcher
+- Implementing agent production-ready. There’re nodes and edges, but no cycles. We can integrate GPT Researcher (as a node under LangGraph graph) within Multi-Agent Architecture. (https://github.com/assafelovic/gpt-researcher/tree/master/multi_agents)
 - Every agent in a multi-agent system can be a researcher, as part of workflow. e.g., `Technology` agent is talor-made for technological subjects, and is dynamically created/chosen
 - Research automation needs to make a decision for a few deeper levels and iterate again again again until the optimal answer. Key difference here is not only width (in parallel then aggregation) but also depth
 
@@ -638,6 +638,7 @@ Output:
 
 ---
 
+---
 
 # Why DeepSeek's MoE and GRPO is a Successful Architecture in LLM Research and Application
 
@@ -678,6 +679,7 @@ DeepSeek's MoE architecture has demonstrated exceptional versatility across vari
 - **Healthcare**: Advanced diagnostic capabilities through the analysis of large medical datasets ([OpDeepSeek](https://opdeepseek.com/deepseek-moe/)).
 
 ---
+
 
 ## Group Relative Policy Optimization (GRPO): Revolutionizing Reinforcement Learning
 
